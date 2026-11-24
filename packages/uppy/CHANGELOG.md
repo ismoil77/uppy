@@ -1,5 +1,36 @@
 # uppy
 
+## 6.0.9
+
+### Patch Changes
+
+- Updated dependencies [31a49e4]
+- Updated dependencies [aa7bd52]
+- Updated dependencies [dd31610]
+- Updated dependencies [b2bb6f5]
+- Updated dependencies [6d5a1f5]
+- Updated dependencies [0ada2c6]
+- Updated dependencies [7d7e72c]
+- Updated dependencies [294fd47]
+- Updated dependencies [22fa75c]
+- Updated dependencies [6fe4558]
+- Updated dependencies [43b689c]
+- Updated dependencies [1430c20]
+- Updated dependencies [4c7fed6]
+- Updated dependencies [c520e83]
+- Updated dependencies [20d0e51]
+- Updated dependencies [05a41ca]
+- Updated dependencies [0b19991]
+  - @uppy/dashboard@6.0.4
+  - @uppy/status-bar@6.0.2
+  - @uppy/locales@5.3.3
+  - @uppy/aws-s3@6.3.2
+  - @uppy/core@6.4.0
+  - @uppy/tus@6.0.2
+  - @uppy/transloadit@6.1.1
+  - @uppy/screen-capture@6.0.4
+  - @uppy/thumbnail-generator@6.0.3
+
 ## 6.0.8
 
 ### Patch Changes

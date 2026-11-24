@@ -1,5 +1,13 @@
 # @uppy/vue
 
+## 4.0.2
+
+### Patch Changes
+
+- 1f5766f: The headless components (`Dropzone`, `FilesGrid`, `FilesList`, `ProviderIcon`, `Thumbnail`, `UploadButton`) now unmount their inner Preact tree when they unmount. Before, its cleanup never ran, so `Thumbnail` never revoked the object URLs it created.
+- Updated dependencies [b2bb6f5]
+  - @uppy/components@2.1.2
+
 ## 4.0.1
 
 ### Patch Changes

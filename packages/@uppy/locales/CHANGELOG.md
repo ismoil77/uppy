@@ -1,5 +1,21 @@
 # @uppy/locales
 
+## 5.3.3
+
+### Patch Changes
+
+- 31a49e4: Give upload action buttons more specific screen reader labels. The per-file remove, pause, resume and cancel buttons now include the file name (for example "Pause upload photo.jpg"), and the cancel, pause and resume buttons that act on every file now say "Cancel all uploads", "Pause all uploads" and "Resume all uploads". Visible text and tooltips are unchanged. Adds the `removeFileWithFilename`, `pauseUploadWithFilename`, `resumeUploadWithFilename`, `cancelUploadWithFilename`, `cancelAllUploads`, `pauseAllUploads` and `resumeAllUploads` strings.
+- 6fe4558: @uppy/locales: update Turkish (tr_TR)
+- 1430c20: When a listing reports a different bucket than the one before it (a renewed grant for another bucket, or a reconnect, without logging out), the plugin now starts over at the root: the loaded folders and the selection are dropped and the user is told to select the files again. Before, files and folders selected in the first bucket could be imported, or expanded, from the second one, where the same key can be another file.
+- Updated dependencies [b2bb6f5]
+- Updated dependencies [0ada2c6]
+- Updated dependencies [7d7e72c]
+- Updated dependencies [294fd47]
+- Updated dependencies [22fa75c]
+- Updated dependencies [4c7fed6]
+- Updated dependencies [20d0e51]
+  - @uppy/core@6.4.0
+
 ## 5.3.2
 
 ### Patch Changes

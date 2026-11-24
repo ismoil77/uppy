@@ -1,5 +1,14 @@
 # @uppy/s3
 
+## 0.2.2
+
+### Patch Changes
+
+- 1430c20: When a listing reports a different bucket than the one before it (a renewed grant for another bucket, or a reconnect, without logging out), the plugin now starts over at the root: the loaded folders and the selection are dropped and the user is told to select the files again. Before, files and folders selected in the first bucket could be imported, or expanded, from the second one, where the same key can be another file.
+- 4c7fed6: S3: opening a granted deep folder such as `tenant/photos/2026/` now lists only that folder instead of the root and every folder above it. Empty or missing folders are still checked against their parent's listing, so a stale link still stops at the nearest existing folder. A path outside the grant shows the root.
+  
+  Remote providers: a folder that was added to the tree before its parent was listed (for its breadcrumbs or as a search result) now appears in the parent's listing order once the parent is opened, and no longer appears twice when it is on a later page.
+
 ## 0.2.1
 
 ### Patch Changes

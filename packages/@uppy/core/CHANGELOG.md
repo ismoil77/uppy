@@ -1,5 +1,27 @@
 # @uppy/core
 
+## 6.4.0
+
+### Minor Changes
+
+- 20d0e51: Expose the Preact automatic runtime.
+
+### Patch Changes
+
+- b2bb6f5: Ignore a Companion `i-am` header that isn't an absolute HTTP(S) URL without credentials, since it becomes the base URL of the OAuth popup.
+- 0ada2c6: Fix the Dashboard crashing with "Partial tree not complete" when a Dropbox search
+  matched items that aren't mounted in the user's Dropbox (e.g. shared folders that
+  weren't added), which have no path. Companion now leaves such items out, since they
+  can't be browsed or addressed by path, instead of sending the request path
+  `undefined`. The search view also now uses the ids it gave the results in its tree,
+  so such a request path from an older Companion no longer breaks rendering.
+- 7d7e72c: Google Picker: when the picked files can't be added, show "Failed to add files" instead of the raw `failedToAddFiles` key. The string only existed in @uppy/status-bar's locale, so it was missing unless the full `@uppy/locales` language pack was loaded. It is now part of @uppy/core's locale.
+- 294fd47: Replace the `namespace-emitter` dependency with an equivalent event emitter inside `@uppy/core`. `on`, `once`, `off` and `emit` work as before, including `on('*')` and namespace listeners (a `dashboard` listener also receives `dashboard:modal-closed`), with four fixes: `off(event, fn)` now also removes a listener added with `once(event, fn)`; `*` listeners receive namespaced events regardless of the order in which listeners were added; `emit('*')` calls `*` listeners once instead of twice; and names such as `constructor` can be used as event names.
+- 22fa75c: Make `addFiles()` linear instead of quadratic in the number of files. Adding 16k files took ~12s and now takes ~0.1s.
+- 4c7fed6: S3: opening a granted deep folder such as `tenant/photos/2026/` now lists only that folder instead of the root and every folder above it. Empty or missing folders are still checked against their parent's listing, so a stale link still stops at the nearest existing folder. A path outside the grant shows the root.
+  
+  Remote providers: a folder that was added to the tree before its parent was listed (for its breadcrumbs or as a search result) now appears in the parent's listing order once the parent is opened, and no longer appears twice when it is on a later page.
+
 ## 6.3.2
 
 ### Patch Changes
